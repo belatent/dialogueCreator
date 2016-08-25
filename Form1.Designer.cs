@@ -164,6 +164,7 @@
             this.previewBox.Location = new System.Drawing.Point(432, 24);
             this.previewBox.Multiline = true;
             this.previewBox.Name = "previewBox";
+            this.previewBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.previewBox.Size = new System.Drawing.Size(594, 466);
             this.previewBox.TabIndex = 10;
             this.previewBox.Text = "这里是预览，喵~";
@@ -180,7 +181,7 @@
             // textPreview
             // 
             this.textPreview.AutoSize = true;
-            this.textPreview.Location = new System.Drawing.Point(432, 6);
+            this.textPreview.Location = new System.Drawing.Point(429, 6);
             this.textPreview.Name = "textPreview";
             this.textPreview.Size = new System.Drawing.Size(142, 15);
             this.textPreview.TabIndex = 12;
@@ -415,7 +416,9 @@
             // showFileName
             // 
             this.showFileName.AutoSize = true;
-            this.showFileName.Location = new System.Drawing.Point(906, 6);
+            this.showFileName.Dock = System.Windows.Forms.DockStyle.Right;
+            this.showFileName.Location = new System.Drawing.Point(918, 0);
+            this.showFileName.Margin = new System.Windows.Forms.Padding(3);
             this.showFileName.Name = "showFileName";
             this.showFileName.Size = new System.Drawing.Size(120, 15);
             this.showFileName.TabIndex = 38;
