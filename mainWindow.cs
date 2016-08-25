@@ -16,7 +16,7 @@ namespace dialoguecraetor
     public partial class MainWindow : Form
     {
         string narrator = "-";
-        int inputPosition;
+        int inputPosition = 0;
         Dictionary<string, int> charButton;
         Button setNameButton;
 
@@ -159,15 +159,24 @@ namespace dialoguecraetor
 
         private void SendToPreview_Click(object sender, EventArgs e)
         {
+            string input;
+
             if (narrator.Equals("-"))
                 MessageBox.Show("忘记选角色了或者角色未命名哟。");
             else if (dialogueBox.Text.Equals("在这里输入对话~") || dialogueBox.Text.Equals(""))
                 MessageBox.Show("还没写对话哟。");
             else
             {
+                inputPosition = previewBox.SelectionStart;
+                input = "[" + narrator + "]" + dialogueBox.Text + "\r\n";
                 if (previewBox.Text.Equals("这里是预览，喵~"))
+                {
                     previewBox.Text = "";
-                previewBox.Text = previewBox.Text.Insert(inputPosition, "[" + narrator + "]" + dialogueBox.Text);
+                }
+                previewBox.Text = previewBox.Text.Insert(inputPosition, input);
+                inputPosition += input.Length;
+                previewBox.SelectionStart = inputPosition;
+                dialogueBox.Text = "";
             }
                 
         }
@@ -197,6 +206,11 @@ namespace dialoguecraetor
         private void noThing_Click(object sender, EventArgs e)
         {
             MessageBox.Show("这块我还没写 :P");
+        }
+
+        private void readme_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("哪个倒霉蛋写的：BeLatent\n\n还有啥没做完：\n\t1.快捷键修改没写\n\t2.发送没写\n\t3.读取剧本里已有角色名到按钮上没写\n\t4.多角色选定没写\n\n该咋用？：\n\t1.首先先按1~0号按钮设定角色名\n\t2.再用快捷键选角色名后叙述者那一行字就会更新表示你选的角色啦\n\t3.输入对话后注♂入>///<（hint：注入默认注入预览框里输入标最后停的位置,记得修改输入标位置）\n\t4.写好了就可以按“保存剧本”啦~\n\t当然还可以打开已经写好的修改啦~\n\nBUG请及时反馈，使用愉快~");
         }
     }
 }

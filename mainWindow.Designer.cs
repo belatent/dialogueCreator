@@ -66,6 +66,7 @@
             this.open = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.readme = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -425,6 +426,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.readme);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.showFileName);
             this.panel1.Controls.Add(this.open);
@@ -467,6 +469,16 @@
             this.panel1.Size = new System.Drawing.Size(1036, 503);
             this.panel1.TabIndex = 40;
             // 
+            // readme
+            // 
+            this.readme.Location = new System.Drawing.Point(251, 6);
+            this.readme.Name = "readme";
+            this.readme.Size = new System.Drawing.Size(155, 25);
+            this.readme.TabIndex = 40;
+            this.readme.Text = "第一次用请戳>///<";
+            this.readme.UseVisualStyleBackColor = true;
+            this.readme.Click += new System.EventHandler(this.readme_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -477,7 +489,7 @@
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.ShowIcon = false;
-            this.Text = "剧本编辑器 V0.1";
+            this.Text = "剧本编辑器 V0.1 - BeLatent史诗巨献";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -523,6 +535,7 @@
         private System.Windows.Forms.Button open;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button readme;
     }
 }
 
