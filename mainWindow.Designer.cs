@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace dialoguecraetor
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.previewBox = new System.Windows.Forms.TextBox();
+            this.showFileName = new System.Windows.Forms.Label();
             this.character1 = new System.Windows.Forms.Button();
             this.character2 = new System.Windows.Forms.Button();
             this.character3 = new System.Windows.Forms.Button();
@@ -38,7 +40,6 @@
             this.character8 = new System.Windows.Forms.Button();
             this.character9 = new System.Windows.Forms.Button();
             this.character10 = new System.Windows.Forms.Button();
-            this.previewBox = new System.Windows.Forms.TextBox();
             this.dialogueBox = new System.Windows.Forms.TextBox();
             this.textPreview = new System.Windows.Forms.Label();
             this.showCharacterName = new System.Windows.Forms.Label();
@@ -48,9 +49,6 @@
             this.SendEmail = new System.Windows.Forms.Button();
             this.note1 = new System.Windows.Forms.Label();
             this.note2 = new System.Windows.Forms.Label();
-            this.cEmpty = new System.Windows.Forms.Button();
-            this.cAll = new System.Windows.Forms.Button();
-            this.cAside = new System.Windows.Forms.Button();
             this.preset1 = new System.Windows.Forms.Label();
             this.preset2 = new System.Windows.Forms.Label();
             this.preset3 = new System.Windows.Forms.Label();
@@ -66,108 +64,133 @@
             this.c10 = new System.Windows.Forms.Label();
             this.save = new System.Windows.Forms.Button();
             this.open = new System.Windows.Forms.Button();
-            this.showFileName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // character1
-            // 
-            this.character1.Location = new System.Drawing.Point(191, 69);
-            this.character1.Name = "character1";
-            this.character1.Size = new System.Drawing.Size(96, 32);
-            this.character1.TabIndex = 0;
-            this.character1.Text = "-";
-            this.character1.UseVisualStyleBackColor = true;
-            // 
-            // character2
-            // 
-            this.character2.Location = new System.Drawing.Point(191, 107);
-            this.character2.Name = "character2";
-            this.character2.Size = new System.Drawing.Size(96, 32);
-            this.character2.TabIndex = 1;
-            this.character2.Text = "-";
-            this.character2.UseVisualStyleBackColor = true;
-            // 
-            // character3
-            // 
-            this.character3.Location = new System.Drawing.Point(191, 145);
-            this.character3.Name = "character3";
-            this.character3.Size = new System.Drawing.Size(96, 32);
-            this.character3.TabIndex = 2;
-            this.character3.Text = "-";
-            this.character3.UseVisualStyleBackColor = true;
-            // 
-            // character4
-            // 
-            this.character4.Location = new System.Drawing.Point(191, 183);
-            this.character4.Name = "character4";
-            this.character4.Size = new System.Drawing.Size(96, 32);
-            this.character4.TabIndex = 3;
-            this.character4.Text = "-";
-            this.character4.UseVisualStyleBackColor = true;
-            // 
-            // character5
-            // 
-            this.character5.Location = new System.Drawing.Point(191, 221);
-            this.character5.Name = "character5";
-            this.character5.Size = new System.Drawing.Size(96, 32);
-            this.character5.TabIndex = 4;
-            this.character5.Text = "-";
-            this.character5.UseVisualStyleBackColor = true;
-            // 
-            // character6
-            // 
-            this.character6.Location = new System.Drawing.Point(322, 69);
-            this.character6.Name = "character6";
-            this.character6.Size = new System.Drawing.Size(96, 32);
-            this.character6.TabIndex = 5;
-            this.character6.Text = "-";
-            this.character6.UseVisualStyleBackColor = true;
-            // 
-            // character7
-            // 
-            this.character7.Location = new System.Drawing.Point(322, 107);
-            this.character7.Name = "character7";
-            this.character7.Size = new System.Drawing.Size(96, 32);
-            this.character7.TabIndex = 6;
-            this.character7.Text = "-";
-            this.character7.UseVisualStyleBackColor = true;
-            // 
-            // character8
-            // 
-            this.character8.Location = new System.Drawing.Point(322, 145);
-            this.character8.Name = "character8";
-            this.character8.Size = new System.Drawing.Size(96, 32);
-            this.character8.TabIndex = 7;
-            this.character8.Text = "-";
-            this.character8.UseVisualStyleBackColor = true;
-            // 
-            // character9
-            // 
-            this.character9.Location = new System.Drawing.Point(322, 183);
-            this.character9.Name = "character9";
-            this.character9.Size = new System.Drawing.Size(96, 32);
-            this.character9.TabIndex = 8;
-            this.character9.Text = "-";
-            this.character9.UseVisualStyleBackColor = true;
-            // 
-            // character10
-            // 
-            this.character10.Location = new System.Drawing.Point(322, 221);
-            this.character10.Name = "character10";
-            this.character10.Size = new System.Drawing.Size(96, 32);
-            this.character10.TabIndex = 9;
-            this.character10.Text = "-";
-            this.character10.UseVisualStyleBackColor = true;
             // 
             // previewBox
             // 
             this.previewBox.Location = new System.Drawing.Point(432, 24);
+            this.previewBox.MaxLength = 65535;
             this.previewBox.Multiline = true;
             this.previewBox.Name = "previewBox";
             this.previewBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.previewBox.Size = new System.Drawing.Size(594, 466);
             this.previewBox.TabIndex = 10;
             this.previewBox.Text = "这里是预览，喵~";
+            this.previewBox.MouseLeave += new System.EventHandler(this.previewBox_MouseLeave);
+            // 
+            // showFileName
+            // 
+            this.showFileName.AutoSize = true;
+            this.showFileName.Dock = System.Windows.Forms.DockStyle.Right;
+            this.showFileName.Location = new System.Drawing.Point(916, 0);
+            this.showFileName.Margin = new System.Windows.Forms.Padding(3);
+            this.showFileName.Name = "showFileName";
+            this.showFileName.Size = new System.Drawing.Size(120, 15);
+            this.showFileName.TabIndex = 38;
+            this.showFileName.Text = "当前打开剧本：-";
+            // 
+            // character1
+            // 
+            this.character1.Location = new System.Drawing.Point(160, 69);
+            this.character1.Name = "character1";
+            this.character1.Size = new System.Drawing.Size(96, 32);
+            this.character1.TabIndex = 0;
+            this.character1.Text = "-";
+            this.character1.UseVisualStyleBackColor = true;
+            this.character1.Click += new System.EventHandler(this.characterButton_Click);
+            // 
+            // character2
+            // 
+            this.character2.Location = new System.Drawing.Point(160, 107);
+            this.character2.Name = "character2";
+            this.character2.Size = new System.Drawing.Size(96, 32);
+            this.character2.TabIndex = 1;
+            this.character2.Text = "-";
+            this.character2.UseVisualStyleBackColor = true;
+            this.character2.Click += new System.EventHandler(this.characterButton_Click);
+            // 
+            // character3
+            // 
+            this.character3.Location = new System.Drawing.Point(160, 145);
+            this.character3.Name = "character3";
+            this.character3.Size = new System.Drawing.Size(96, 32);
+            this.character3.TabIndex = 2;
+            this.character3.Text = "-";
+            this.character3.UseVisualStyleBackColor = true;
+            this.character3.Click += new System.EventHandler(this.characterButton_Click);
+            // 
+            // character4
+            // 
+            this.character4.Location = new System.Drawing.Point(160, 183);
+            this.character4.Name = "character4";
+            this.character4.Size = new System.Drawing.Size(96, 32);
+            this.character4.TabIndex = 3;
+            this.character4.Text = "-";
+            this.character4.UseVisualStyleBackColor = true;
+            this.character4.Click += new System.EventHandler(this.characterButton_Click);
+            // 
+            // character5
+            // 
+            this.character5.Location = new System.Drawing.Point(160, 221);
+            this.character5.Name = "character5";
+            this.character5.Size = new System.Drawing.Size(96, 32);
+            this.character5.TabIndex = 4;
+            this.character5.Text = "-";
+            this.character5.UseVisualStyleBackColor = true;
+            this.character5.Click += new System.EventHandler(this.characterButton_Click);
+            // 
+            // character6
+            // 
+            this.character6.Location = new System.Drawing.Point(310, 69);
+            this.character6.Name = "character6";
+            this.character6.Size = new System.Drawing.Size(96, 32);
+            this.character6.TabIndex = 5;
+            this.character6.Text = "-";
+            this.character6.UseVisualStyleBackColor = true;
+            this.character6.Click += new System.EventHandler(this.characterButton_Click);
+            // 
+            // character7
+            // 
+            this.character7.Location = new System.Drawing.Point(310, 107);
+            this.character7.Name = "character7";
+            this.character7.Size = new System.Drawing.Size(96, 32);
+            this.character7.TabIndex = 6;
+            this.character7.Text = "-";
+            this.character7.UseVisualStyleBackColor = true;
+            this.character7.Click += new System.EventHandler(this.characterButton_Click);
+            // 
+            // character8
+            // 
+            this.character8.Location = new System.Drawing.Point(310, 145);
+            this.character8.Name = "character8";
+            this.character8.Size = new System.Drawing.Size(96, 32);
+            this.character8.TabIndex = 7;
+            this.character8.Text = "-";
+            this.character8.UseVisualStyleBackColor = true;
+            this.character8.Click += new System.EventHandler(this.characterButton_Click);
+            // 
+            // character9
+            // 
+            this.character9.Location = new System.Drawing.Point(310, 183);
+            this.character9.Name = "character9";
+            this.character9.Size = new System.Drawing.Size(96, 32);
+            this.character9.TabIndex = 8;
+            this.character9.Text = "-";
+            this.character9.UseVisualStyleBackColor = true;
+            this.character9.Click += new System.EventHandler(this.characterButton_Click);
+            // 
+            // character10
+            // 
+            this.character10.Location = new System.Drawing.Point(310, 221);
+            this.character10.Name = "character10";
+            this.character10.Size = new System.Drawing.Size(96, 32);
+            this.character10.TabIndex = 9;
+            this.character10.Text = "-";
+            this.character10.UseVisualStyleBackColor = true;
+            this.character10.Click += new System.EventHandler(this.characterButton_Click);
             // 
             // dialogueBox
             // 
@@ -177,6 +200,7 @@
             this.dialogueBox.Size = new System.Drawing.Size(406, 145);
             this.dialogueBox.TabIndex = 11;
             this.dialogueBox.Text = "在这里输入对话~";
+            this.dialogueBox.Click += new System.EventHandler(this.dialogueBox_Click);
             // 
             // textPreview
             // 
@@ -198,12 +222,13 @@
             // 
             // SendToPreview
             // 
-            this.SendToPreview.Location = new System.Drawing.Point(212, 307);
+            this.SendToPreview.Location = new System.Drawing.Point(238, 307);
             this.SendToPreview.Name = "SendToPreview";
-            this.SendToPreview.Size = new System.Drawing.Size(206, 32);
+            this.SendToPreview.Size = new System.Drawing.Size(180, 32);
             this.SendToPreview.TabIndex = 14;
-            this.SendToPreview.Text = "注♂入右边（快捷键Enter）";
+            this.SendToPreview.Text = "注♂入（Ctrl+Enter）";
             this.SendToPreview.UseVisualStyleBackColor = true;
+            this.SendToPreview.Click += new System.EventHandler(this.SendToPreview_Click);
             // 
             // characterName
             // 
@@ -222,6 +247,7 @@
             this.hotKeySetting.TabIndex = 16;
             this.hotKeySetting.Text = "快捷键...";
             this.hotKeySetting.UseVisualStyleBackColor = true;
+            this.hotKeySetting.Click += new System.EventHandler(this.noThing_Click);
             // 
             // SendEmail
             // 
@@ -231,168 +257,142 @@
             this.SendEmail.TabIndex = 17;
             this.SendEmail.Text = "发送给BL";
             this.SendEmail.UseVisualStyleBackColor = true;
+            this.SendEmail.Click += new System.EventHandler(this.noThing_Click);
             // 
             // note1
             // 
             this.note1.AutoSize = true;
             this.note1.Location = new System.Drawing.Point(20, 24);
             this.note1.Name = "note1";
-            this.note1.Size = new System.Drawing.Size(288, 15);
+            this.note1.Size = new System.Drawing.Size(213, 15);
             this.note1.TabIndex = 18;
-            this.note1.Text = "- 按下切换角色（快捷键Ctrl+提示编号）";
+            this.note1.Text = "- 按下Ctrl+提示编号切换角色";
             // 
             // note2
             // 
             this.note2.AutoSize = true;
             this.note2.Location = new System.Drawing.Point(22, 39);
             this.note2.Name = "note2";
-            this.note2.Size = new System.Drawing.Size(265, 15);
+            this.note2.Size = new System.Drawing.Size(338, 15);
             this.note2.TabIndex = 19;
-            this.note2.Text = "- 按着Ctrl按下时编辑此按扭角色名。";
-            // 
-            // cEmpty
-            // 
-            this.cEmpty.Location = new System.Drawing.Point(44, 202);
-            this.cEmpty.Name = "cEmpty";
-            this.cEmpty.Size = new System.Drawing.Size(96, 32);
-            this.cEmpty.TabIndex = 22;
-            this.cEmpty.Text = "（留空）";
-            this.cEmpty.UseVisualStyleBackColor = true;
-            // 
-            // cAll
-            // 
-            this.cAll.Location = new System.Drawing.Point(44, 143);
-            this.cAll.Name = "cAll";
-            this.cAll.Size = new System.Drawing.Size(96, 32);
-            this.cAll.TabIndex = 21;
-            this.cAll.Text = "众人";
-            this.cAll.UseVisualStyleBackColor = true;
-            // 
-            // cAside
-            // 
-            this.cAside.Location = new System.Drawing.Point(44, 88);
-            this.cAside.Name = "cAside";
-            this.cAside.Size = new System.Drawing.Size(96, 32);
-            this.cAside.TabIndex = 20;
-            this.cAside.Text = "旁白";
-            this.cAside.UseVisualStyleBackColor = true;
+            this.note2.Text = "- 按下非预置角色按钮时可编辑此按扭的角色名。";
             // 
             // preset1
             // 
             this.preset1.AutoSize = true;
-            this.preset1.Location = new System.Drawing.Point(20, 97);
+            this.preset1.Location = new System.Drawing.Point(28, 124);
             this.preset1.Name = "preset1";
-            this.preset1.Size = new System.Drawing.Size(15, 15);
+            this.preset1.Size = new System.Drawing.Size(69, 15);
             this.preset1.TabIndex = 23;
-            this.preset1.Text = "P";
+            this.preset1.Text = "P - 旁白";
             // 
             // preset2
             // 
             this.preset2.AutoSize = true;
-            this.preset2.Location = new System.Drawing.Point(20, 152);
+            this.preset2.Location = new System.Drawing.Point(28, 172);
             this.preset2.Name = "preset2";
-            this.preset2.Size = new System.Drawing.Size(15, 15);
+            this.preset2.Size = new System.Drawing.Size(69, 15);
             this.preset2.TabIndex = 24;
-            this.preset2.Text = "A";
+            this.preset2.Text = "A - 众人";
             // 
             // preset3
             // 
             this.preset3.AutoSize = true;
-            this.preset3.Location = new System.Drawing.Point(21, 209);
+            this.preset3.Location = new System.Drawing.Point(20, 221);
             this.preset3.Name = "preset3";
-            this.preset3.Size = new System.Drawing.Size(15, 15);
+            this.preset3.Size = new System.Drawing.Size(99, 15);
             this.preset3.TabIndex = 25;
-            this.preset3.Text = "E";
+            this.preset3.Text = "E - （留空）";
             // 
             // c1
             // 
             this.c1.AutoSize = true;
-            this.c1.Location = new System.Drawing.Point(170, 78);
+            this.c1.Location = new System.Drawing.Point(127, 78);
             this.c1.Name = "c1";
-            this.c1.Size = new System.Drawing.Size(15, 15);
+            this.c1.Size = new System.Drawing.Size(31, 15);
             this.c1.TabIndex = 26;
-            this.c1.Text = "1";
+            this.c1.Text = "1 -";
             // 
             // c2
             // 
             this.c2.AutoSize = true;
-            this.c2.Location = new System.Drawing.Point(170, 116);
+            this.c2.Location = new System.Drawing.Point(127, 116);
             this.c2.Name = "c2";
-            this.c2.Size = new System.Drawing.Size(15, 15);
+            this.c2.Size = new System.Drawing.Size(31, 15);
             this.c2.TabIndex = 27;
-            this.c2.Text = "2";
+            this.c2.Text = "2 -";
             // 
             // c3
             // 
             this.c3.AutoSize = true;
-            this.c3.Location = new System.Drawing.Point(170, 154);
+            this.c3.Location = new System.Drawing.Point(127, 154);
             this.c3.Name = "c3";
-            this.c3.Size = new System.Drawing.Size(15, 15);
+            this.c3.Size = new System.Drawing.Size(31, 15);
             this.c3.TabIndex = 28;
-            this.c3.Text = "3";
+            this.c3.Text = "3 -";
             // 
             // c4
             // 
             this.c4.AutoSize = true;
-            this.c4.Location = new System.Drawing.Point(170, 190);
+            this.c4.Location = new System.Drawing.Point(127, 190);
             this.c4.Name = "c4";
-            this.c4.Size = new System.Drawing.Size(15, 15);
+            this.c4.Size = new System.Drawing.Size(31, 15);
             this.c4.TabIndex = 29;
-            this.c4.Text = "4";
+            this.c4.Text = "4 -";
             // 
             // c5
             // 
             this.c5.AutoSize = true;
-            this.c5.Location = new System.Drawing.Point(170, 230);
+            this.c5.Location = new System.Drawing.Point(127, 230);
             this.c5.Name = "c5";
-            this.c5.Size = new System.Drawing.Size(15, 15);
+            this.c5.Size = new System.Drawing.Size(31, 15);
             this.c5.TabIndex = 30;
-            this.c5.Text = "5";
+            this.c5.Text = "5 -";
             // 
             // c6
             // 
             this.c6.AutoSize = true;
-            this.c6.Location = new System.Drawing.Point(301, 78);
+            this.c6.Location = new System.Drawing.Point(277, 78);
             this.c6.Name = "c6";
-            this.c6.Size = new System.Drawing.Size(15, 15);
+            this.c6.Size = new System.Drawing.Size(31, 15);
             this.c6.TabIndex = 31;
-            this.c6.Text = "6";
+            this.c6.Text = "6 -";
             // 
             // c7
             // 
             this.c7.AutoSize = true;
-            this.c7.Location = new System.Drawing.Point(301, 116);
+            this.c7.Location = new System.Drawing.Point(277, 116);
             this.c7.Name = "c7";
-            this.c7.Size = new System.Drawing.Size(15, 15);
+            this.c7.Size = new System.Drawing.Size(31, 15);
             this.c7.TabIndex = 32;
-            this.c7.Text = "7";
+            this.c7.Text = "7 -";
             // 
             // c8
             // 
             this.c8.AutoSize = true;
-            this.c8.Location = new System.Drawing.Point(301, 154);
+            this.c8.Location = new System.Drawing.Point(277, 154);
             this.c8.Name = "c8";
-            this.c8.Size = new System.Drawing.Size(15, 15);
+            this.c8.Size = new System.Drawing.Size(31, 15);
             this.c8.TabIndex = 33;
-            this.c8.Text = "8";
+            this.c8.Text = "8 -";
             // 
             // c9
             // 
             this.c9.AutoSize = true;
-            this.c9.Location = new System.Drawing.Point(301, 192);
+            this.c9.Location = new System.Drawing.Point(277, 192);
             this.c9.Name = "c9";
-            this.c9.Size = new System.Drawing.Size(15, 15);
+            this.c9.Size = new System.Drawing.Size(31, 15);
             this.c9.TabIndex = 34;
-            this.c9.Text = "9";
+            this.c9.Text = "9 -";
             // 
             // c10
             // 
             this.c10.AutoSize = true;
-            this.c10.Location = new System.Drawing.Point(301, 230);
+            this.c10.Location = new System.Drawing.Point(277, 230);
             this.c10.Name = "c10";
-            this.c10.Size = new System.Drawing.Size(15, 15);
+            this.c10.Size = new System.Drawing.Size(31, 15);
             this.c10.TabIndex = 35;
-            this.c10.Text = "0";
+            this.c10.Text = "0 -";
             // 
             // save
             // 
@@ -402,6 +402,7 @@
             this.save.TabIndex = 36;
             this.save.Text = "保存剧本";
             this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // open
             // 
@@ -413,70 +414,79 @@
             this.open.UseVisualStyleBackColor = true;
             this.open.Click += new System.EventHandler(this.open_Click);
             // 
-            // showFileName
+            // label1
             // 
-            this.showFileName.AutoSize = true;
-            this.showFileName.Dock = System.Windows.Forms.DockStyle.Right;
-            this.showFileName.Location = new System.Drawing.Point(918, 0);
-            this.showFileName.Margin = new System.Windows.Forms.Padding(3);
-            this.showFileName.Name = "showFileName";
-            this.showFileName.Size = new System.Drawing.Size(120, 15);
-            this.showFileName.TabIndex = 38;
-            this.showFileName.Text = "当前打开剧本：-";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 15);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "- 预设名 - ";
             // 
-            // Form1
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.showFileName);
+            this.panel1.Controls.Add(this.open);
+            this.panel1.Controls.Add(this.save);
+            this.panel1.Controls.Add(this.c10);
+            this.panel1.Controls.Add(this.c9);
+            this.panel1.Controls.Add(this.c8);
+            this.panel1.Controls.Add(this.c7);
+            this.panel1.Controls.Add(this.c6);
+            this.panel1.Controls.Add(this.c5);
+            this.panel1.Controls.Add(this.c4);
+            this.panel1.Controls.Add(this.c3);
+            this.panel1.Controls.Add(this.c2);
+            this.panel1.Controls.Add(this.c1);
+            this.panel1.Controls.Add(this.preset3);
+            this.panel1.Controls.Add(this.preset2);
+            this.panel1.Controls.Add(this.preset1);
+            this.panel1.Controls.Add(this.note2);
+            this.panel1.Controls.Add(this.note1);
+            this.panel1.Controls.Add(this.SendEmail);
+            this.panel1.Controls.Add(this.hotKeySetting);
+            this.panel1.Controls.Add(this.characterName);
+            this.panel1.Controls.Add(this.SendToPreview);
+            this.panel1.Controls.Add(this.showCharacterName);
+            this.panel1.Controls.Add(this.textPreview);
+            this.panel1.Controls.Add(this.dialogueBox);
+            this.panel1.Controls.Add(this.previewBox);
+            this.panel1.Controls.Add(this.character10);
+            this.panel1.Controls.Add(this.character9);
+            this.panel1.Controls.Add(this.character8);
+            this.panel1.Controls.Add(this.character7);
+            this.panel1.Controls.Add(this.character6);
+            this.panel1.Controls.Add(this.character5);
+            this.panel1.Controls.Add(this.character4);
+            this.panel1.Controls.Add(this.character3);
+            this.panel1.Controls.Add(this.character2);
+            this.panel1.Controls.Add(this.character1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1036, 503);
+            this.panel1.TabIndex = 40;
+            // 
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 502);
-            this.Controls.Add(this.showFileName);
-            this.Controls.Add(this.open);
-            this.Controls.Add(this.save);
-            this.Controls.Add(this.c10);
-            this.Controls.Add(this.c9);
-            this.Controls.Add(this.c8);
-            this.Controls.Add(this.c7);
-            this.Controls.Add(this.c6);
-            this.Controls.Add(this.c5);
-            this.Controls.Add(this.c4);
-            this.Controls.Add(this.c3);
-            this.Controls.Add(this.c2);
-            this.Controls.Add(this.c1);
-            this.Controls.Add(this.preset3);
-            this.Controls.Add(this.preset2);
-            this.Controls.Add(this.preset1);
-            this.Controls.Add(this.cEmpty);
-            this.Controls.Add(this.cAll);
-            this.Controls.Add(this.cAside);
-            this.Controls.Add(this.note2);
-            this.Controls.Add(this.note1);
-            this.Controls.Add(this.SendEmail);
-            this.Controls.Add(this.hotKeySetting);
-            this.Controls.Add(this.characterName);
-            this.Controls.Add(this.SendToPreview);
-            this.Controls.Add(this.showCharacterName);
-            this.Controls.Add(this.textPreview);
-            this.Controls.Add(this.dialogueBox);
-            this.Controls.Add(this.previewBox);
-            this.Controls.Add(this.character10);
-            this.Controls.Add(this.character9);
-            this.Controls.Add(this.character8);
-            this.Controls.Add(this.character7);
-            this.Controls.Add(this.character6);
-            this.Controls.Add(this.character5);
-            this.Controls.Add(this.character4);
-            this.Controls.Add(this.character3);
-            this.Controls.Add(this.character2);
-            this.Controls.Add(this.character1);
-            this.Name = "Form1";
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.Name = "MainWindow";
+            this.ShowIcon = false;
             this.Text = "剧本编辑器 V0.1";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.TextBox previewBox;
+        private System.Windows.Forms.Label showFileName;
         private System.Windows.Forms.Button character1;
         private System.Windows.Forms.Button character2;
         private System.Windows.Forms.Button character3;
@@ -487,7 +497,6 @@
         private System.Windows.Forms.Button character8;
         private System.Windows.Forms.Button character9;
         private System.Windows.Forms.Button character10;
-        private System.Windows.Forms.TextBox previewBox;
         private System.Windows.Forms.TextBox dialogueBox;
         private System.Windows.Forms.Label textPreview;
         private System.Windows.Forms.Label showCharacterName;
@@ -497,9 +506,6 @@
         private System.Windows.Forms.Button SendEmail;
         private System.Windows.Forms.Label note1;
         private System.Windows.Forms.Label note2;
-        private System.Windows.Forms.Button cEmpty;
-        private System.Windows.Forms.Button cAll;
-        private System.Windows.Forms.Button cAside;
         private System.Windows.Forms.Label preset1;
         private System.Windows.Forms.Label preset2;
         private System.Windows.Forms.Label preset3;
@@ -515,7 +521,8 @@
         private System.Windows.Forms.Label c10;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button open;
-        private System.Windows.Forms.Label showFileName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
