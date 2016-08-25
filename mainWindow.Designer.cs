@@ -223,11 +223,11 @@
             // 
             // SendToPreview
             // 
-            this.SendToPreview.Location = new System.Drawing.Point(238, 307);
+            this.SendToPreview.Location = new System.Drawing.Point(251, 307);
             this.SendToPreview.Name = "SendToPreview";
-            this.SendToPreview.Size = new System.Drawing.Size(180, 32);
+            this.SendToPreview.Size = new System.Drawing.Size(167, 32);
             this.SendToPreview.TabIndex = 14;
-            this.SendToPreview.Text = "注♂入（Ctrl+Enter）";
+            this.SendToPreview.Text = "注♂入（Ctrl+S）";
             this.SendToPreview.UseVisualStyleBackColor = true;
             this.SendToPreview.Click += new System.EventHandler(this.SendToPreview_Click);
             // 

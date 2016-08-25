@@ -113,7 +113,7 @@ namespace dialoguecraetor
                 narrator = " ";
                 label_update(showCharacterName, "叙述者：(无)");
             }
-            else if (keyData == (Keys.Control | Keys.Enter))
+            else if (keyData == (Keys.Control | Keys.S))
             {
                 SendToPreview_Click(dialogueBox,new EventArgs());
             }
@@ -210,7 +210,7 @@ namespace dialoguecraetor
 
         private void readme_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("哪个倒霉蛋写的：BeLatent\n\n还有啥没做完：\n\t1.快捷键修改没写\n\t2.发送没写\n\t3.读取剧本里已有角色名到按钮上没写\n\t4.多角色选定没写\n\n该咋用？：\n\t1.首先先按1~0号按钮设定角色名\n\t2.再用快捷键选角色名后叙述者那一行字就会更新表示你选的角色啦\n\t3.输入对话后注♂入>///<（hint：注入默认注入预览框里输入标最后停的位置,记得修改输入标位置）\n\t4.写好了就可以按“保存剧本”啦~\n\t当然还可以打开已经写好的修改啦~\n\nBUG请及时反馈，使用愉快~");
+            MessageBox.Show("哪个倒霉蛋写的：BeLatent\n\n还有啥没做完：\n\t1.快捷键修改没写\n\t2.发送没写\n\t3.读取剧本里已有角色名到按钮上没写\n\t4.多角色选定没写\n\n该咋用？：\n\t1.首先先按1~0号按钮设定角色名\n\t2.再用快捷键选角色名后叙述者那一行字就会更新表示你选的角色啦\n\t3.输入对话后注♂入>///<（hint：注入默认注入预览框里输入标最后停的位置,如果动了输入标记得改回底端）\n\t4.写好了就可以按“保存剧本”啦~\n\t当然还可以打开已经写好的修改啦~\n\nBUG请及时反馈，使用愉快~");
         }
     }
 }
